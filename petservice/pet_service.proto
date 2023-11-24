@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "grpc-playground/petstore";
+
+
+message Pet{
+    string name = 1;
+    string species = 2;
+}
+message Pets{
+    repeated Pet pets = 1;
+}
+message PetRequest {}
+
+service PetService {
+
+    rpc GetPets(PetRequest) returns (Pets){}
+}
